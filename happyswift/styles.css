@@ -99,6 +99,8 @@ body {
 /* Hero */
 .hero {
   padding: 60px 0 80px;
+  background: linear-gradient(135deg, #0f172a 0%, #1a2332 50%, #1e2d42 100%);
+  color: #ffffff;
 }
 
 .hero .container {
@@ -110,7 +112,7 @@ body {
 
 .hero-tagline {
   font-size: 13px;
-  color: var(--color-primary-dark);
+  color: #94a3b8;
   font-weight: 500;
   letter-spacing: 0.03em;
   text-transform: uppercase;
@@ -122,18 +124,19 @@ body {
   font-weight: 500;
   line-height: 1.25;
   margin-bottom: 8px;
+  color: #ffffff;
 }
 
 .hero-sub {
   font-size: 17px;
-  color: var(--color-accent);
+  color: #f59e0b;
   font-weight: 500;
   margin-bottom: 16px;
 }
 
 .hero-desc {
   font-size: 15px;
-  color: var(--color-text-secondary);
+  color: #cbd5e1;
   line-height: 1.6;
   margin-bottom: 28px;
   max-width: 480px;
@@ -149,7 +152,7 @@ body {
 .btn-primary {
   background: var(--color-primary);
   color: var(--color-background-primary);
-  border: none;
+  border: 1px solid rgba(210, 228, 255, 0.35);
   padding: 10px 22px;
   font-size: 14px;
   font-weight: 500;
@@ -159,11 +162,31 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: background 0.2s;
+  box-shadow: 0 0 14px rgba(210, 228, 255, 0.2);
+  transition: all 0.25s;
 }
 
 .btn-primary:hover {
   background: var(--color-primary-dark);
+  border-color: rgba(210, 228, 255, 0.6);
+  box-shadow: 0 0 24px rgba(210, 228, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.hero .btn-secondary {
+  color: #e2e8f0;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 12px rgba(148, 163, 184, 0.1);
+  transition: all 0.25s;
+}
+
+.hero .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(148, 163, 184, 0.5);
+  box-shadow: 0 0 20px rgba(148, 163, 184, 0.2);
+  color: #ffffff;
+  transform: translateY(-1px);
 }
 
 .btn-secondary {
@@ -179,13 +202,25 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  transition: background 0.2s;
+  transition: all 0.2s;
 }
 
 .btn-secondary:hover {
   background: var(--color-primary-bg);
   border-color: var(--color-primary);
   color: var(--color-primary-dark);
+}
+
+.hero .btn-secondary {
+  color: #e2e8f0;
+  border-color: #475569;
+  backdrop-filter: blur(4px);
+}
+
+.hero .btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #94a3b8;
+  color: #ffffff;
 }
 
 .hero-badges {
@@ -199,7 +234,7 @@ body {
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: var(--color-text-secondary);
+  color: #94a3b8;
 }
 
 .hero-badges i {
@@ -212,12 +247,10 @@ body {
   width: 100%;
   max-width: 300px;
   margin: 0 auto;
-  background: var(--color-background-secondary);
+  background: #283548;
   border-radius: 32px;
   padding: 12px;
-  box-shadow:
-    0 8px 40px rgba(56, 96, 143, 0.1),
-    0 0 0 0.5px rgba(56, 96, 143, 0.08);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
 }
 
 .phone-frame-inner {
@@ -274,11 +307,17 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 24px;
   align-items: center;
-  transition: box-shadow 0.2s;
+  box-shadow:
+    0 2px 8px rgba(210, 228, 255, 0.2),
+    0 0 0 0 rgba(210, 228, 255, 0);
+  transition: all 0.25s;
 }
 
 .feature-card:hover {
-  box-shadow: 0 4px 20px rgba(56, 96, 143, 0.06);
+  border-color: rgba(56, 96, 143, 0.2);
+  box-shadow:
+    0 8px 32px rgba(210, 228, 255, 0.4),
+    0 0 0 1px rgba(56, 96, 143, 0.08);
 }
 
 .feature-card.reverse {
@@ -467,6 +506,9 @@ body {
   background: transparent;
   color: var(--color-text-primary);
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  display: block;
   transition: all 0.2s;
 }
 
@@ -554,6 +596,19 @@ body {
     font-size: 15px;
   }
 
+  .hero .btn-primary {
+    background: var(--color-primary-dark);
+    border-color: rgba(210, 228, 255, 0.6);
+    box-shadow: 0 0 24px rgba(210, 228, 255, 0.35);
+  }
+
+  .hero .btn-secondary {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(148, 163, 184, 0.5);
+    box-shadow: 0 0 20px rgba(148, 163, 184, 0.2);
+    color: #ffffff;
+  }
+
   .phone-frame {
     max-width: 240px;
   }
@@ -562,6 +617,10 @@ body {
     grid-template-columns: 1fr;
     gap: 16px;
     padding: 20px;
+    border-color: rgba(56, 96, 143, 0.2);
+    box-shadow:
+      0 8px 32px rgba(210, 228, 255, 0.4),
+      0 0 0 1px rgba(56, 96, 143, 0.08);
   }
 
   .feature-card.reverse {
