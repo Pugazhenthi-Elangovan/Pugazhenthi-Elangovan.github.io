@@ -697,6 +697,10 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .nav-signin {
+    display: none;
+  }
+
   .hero {
     padding: 40px 0 60px;
   }
@@ -712,12 +716,6 @@ body {
 
   .hero-sub {
     font-size: 15px;
-  }
-
-  .hero .btn-primary {
-    background: var(--color-primary-dark);
-    border-color: rgba(210, 228, 255, 0.6);
-    box-shadow: 0 0 24px rgba(210, 228, 255, 0.35);
   }
 
   .hero .btn-secondary {
