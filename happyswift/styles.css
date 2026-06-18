@@ -103,6 +103,7 @@ body {
 }
 
 .nav-cta {
+  position: relative;
   font-size: 13px;
   font-weight: 500;
   color: var(--color-background-primary);
@@ -111,11 +112,15 @@ body {
   border-radius: 100px;
   text-decoration: none;
   transition: background 0.2s;
+  isolation: isolate;
 }
 
 .nav-cta:hover {
   background: var(--color-primary-dark);
 }
+
+/* nav-cta already declares its own background/hover above; .btn-glow-border base rule
+   handles the animated ring identically for both nav and hero CTAs */
 
 /* Hero */
 .hero {
@@ -171,6 +176,7 @@ body {
 }
 
 .btn-primary {
+  position: relative;
   background: var(--color-primary);
   color: var(--color-background-primary);
   border: 1px solid rgba(210, 228, 255, 0.35);
@@ -185,6 +191,7 @@ body {
   gap: 6px;
   box-shadow: 0 0 14px rgba(210, 228, 255, 0.2);
   transition: all 0.25s;
+  isolation: isolate;
 }
 
 .btn-primary:hover {
@@ -192,6 +199,56 @@ body {
   border-color: rgba(210, 228, 255, 0.6);
   box-shadow: 0 0 24px rgba(210, 228, 255, 0.35);
   transform: translateY(-1px);
+}
+
+/* Rotating gradient border — true rotation via conic-gradient + animated angle.
+   Same safe double-background layering as before (no negative z-index, no extra
+   markup): inner solid layer on padding-box, conic ring on border-box. The conic
+   gradient's start angle is driven by a registered custom property so the browser
+   can animate it directly (not background-position, which only slides — it can't
+   orbit around curved corners). Falls back to a static ring where @property/conic
+   animation isn't supported, which still looks fine, just without the spin. */
+.btn-glow-border {
+  border: 1.5px solid transparent;
+  background-image:
+    linear-gradient(var(--color-primary), var(--color-primary)),
+    conic-gradient(
+      from var(--ring-angle, 0deg),
+      var(--color-primary) 0%,
+      var(--color-primary) 65%,
+      var(--color-primary-bg) 95%,
+      #f59e0b 100%
+    );
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: spin-ring 4s linear infinite;
+}
+
+.btn-glow-border:hover {
+  background-image:
+    linear-gradient(var(--color-primary-dark), var(--color-primary-dark)),
+    conic-gradient(
+      from var(--ring-angle, 0deg),
+      var(--color-primary-dark) 0%,
+      var(--color-primary-bg) 25%,
+      #f59e0b 50%,
+      var(--color-primary-dark) 75%,
+      #f59e0b 100%
+    );
+}
+
+@keyframes spin-ring {
+  to {
+    --ring-angle: 360deg;
+  }
+}
+
+@supports (background: paint(something)) or (background-image: conic-gradient(from 0deg, red, blue)) {
+  @property --ring-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
 }
 
 .hero .btn-secondary {
@@ -289,6 +346,18 @@ body {
   display: block;
 }
 
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* Section Title */
 .section-title {
   text-align: center;
@@ -341,6 +410,7 @@ body {
   box-shadow:
     0 8px 32px rgba(210, 228, 255, 0.4),
     0 0 0 1px rgba(56, 96, 143, 0.08);
+  transform: translateY(-4px);
 }
 
 .feature-card.reverse {
@@ -418,6 +488,13 @@ body {
   border: 0.5px solid var(--color-border-tertiary);
   border-radius: var(--border-radius-lg);
   padding: 24px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(56, 96, 143, 0.12);
+  border-color: rgba(56, 96, 143, 0.2);
 }
 
 .testimonial-stars {
@@ -482,6 +559,18 @@ body {
   padding: 24px 20px;
   display: flex;
   flex-direction: column;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(56, 96, 143, 0.14);
+  border-color: rgba(56, 96, 143, 0.25);
+}
+
+.pricing-card.featured:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(56, 96, 143, 0.2);
 }
 
 .pricing-card.featured {
@@ -612,11 +701,6 @@ body {
     display: none;
   }
 
-  .nav-cta {
-    font-size: 12px;
-    padding: 7px 14px;
-  }
-
   .hero {
     padding: 40px 0 60px;
   }
@@ -632,12 +716,6 @@ body {
 
   .hero-sub {
     font-size: 15px;
-  }
-
-  .hero .btn-primary {
-    background: var(--color-primary-dark);
-    border-color: rgba(210, 228, 255, 0.6);
-    box-shadow: 0 0 24px rgba(210, 228, 255, 0.35);
   }
 
   .hero .btn-secondary {
@@ -691,5 +769,52 @@ body {
 @media (min-width: 769px) and (max-width: 1024px) {
   .hero h1 {
     font-size: 28px;
+  }
+}
+
+/* Stagger reveal timing within grids for a natural cascade */
+.feature-grid .reveal:nth-child(2) {
+  transition-delay: 0.08s;
+}
+
+.feature-grid .reveal:nth-child(3) {
+  transition-delay: 0.16s;
+}
+
+.testimonial-grid .reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.testimonial-grid .reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+.pricing-grid .reveal:nth-child(2) {
+  transition-delay: 0.1s;
+}
+
+.pricing-grid .reveal:nth-child(3) {
+  transition-delay: 0.2s;
+}
+
+/* Respect reduced motion preference: disable spin, reveal slide, and hover lifts */
+@media (prefers-reduced-motion: reduce) {
+  .btn-glow-border {
+    animation: none;
+    --ring-angle: 0deg;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .feature-card:hover,
+  .testimonial-card:hover,
+  .pricing-card:hover,
+  .pricing-card.featured:hover,
+  .btn-primary:hover {
+    transform: none;
   }
 }

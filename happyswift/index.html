@@ -1,271 +1,302 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HappySwift — Cab Accounting Made Simple</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HappySwift — Cab Accounting Made Simple</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
 
-    <nav class="nav">
-      <div class="container">
-        <a href="/happyswift" class="nav-logo">
-          <img src="icon/app_cab_icon.png" alt="HappySwift" class="nav-icon" />
-          HappySwift
+<nav class="nav">
+  <div class="container">
+    <a href="/happyswift" class="nav-logo">
+      <img src="icon/app_cab_icon.png" alt="HappySwift" class="nav-icon" />
+      HappySwift
+    </a>
+    <div class="nav-actions">
+      <a href="https://happyswift.erprepublic.in" target="_blank" class="nav-signin">Sign in</a>
+      <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="nav-cta">Get started free</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container">
+    <div>
+      <p class="hero-tagline">Cab accounting, finally made simple</p>
+      <h1>Stop tracking rides on WhatsApp<br />and notebooks</h1>
+      <p class="hero-sub">Track. Collect. Grow.</p>
+      <p class="hero-desc">
+        Log a ride in under 2 minutes, see who owes you, and know if this
+        week was good. All from your phone.
+      </p>
+      <div class="hero-actions">
+        <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="btn-primary btn-glow-border">
+          <i class="ti ti-rocket"></i>
+          Get started free
         </a>
-        <div class="nav-actions">
-          <a href="https://app.erprepublic.in" target="_blank" class="nav-signin">Sign in</a>
-          <a href="https://app.erprepublic.in?signup=true" target="_blank" class="nav-cta">Get started free</a>
-        </div>
+        <a href="#features" class="btn-secondary">
+          <i class="ti ti-eye"></i>
+          See how it works
+        </a>
       </div>
-    </nav>
+      <div class="hero-badges">
+        <span><i class="ti ti-check"></i>No credit card needed</span>
+        <span><i class="ti ti-check"></i>Setup in 5 minutes</span>
+      </div>
+    </div>
+    <div class="phone-frame">
+      <div class="phone-frame-inner">
+        <img
+                src="screenshots/ride_list_page.png"
+                alt="HappySwift ride list screen"
+                loading="lazy"
+        />
+      </div>
+    </div>
+  </div>
+</header>
 
-    <header class="hero">
-      <div class="container">
+<section class="features" id="features">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Built around how you work</h2>
+      <p>Your cab yard, your drivers, your customers — everything in one place</p>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="feature-card reveal">
         <div>
-          <p class="hero-tagline">Cab accounting, finally made simple</p>
-          <h1>Stop tracking rides on WhatsApp<br />and notebooks</h1>
-          <p class="hero-sub">Track. Collect. Grow.</p>
-          <p class="hero-desc">
-            Log a ride in under 2 minutes, see who owes you, and know if this
-            week was good. All from your phone.
+          <i class="ti ti-cash feature-icon"></i>
+          <h3>Who owes me, exactly</h3>
+          <p class="feature-label">Section 1 — Dues at a glance</p>
+          <p class="feature-pain">
+            Chasing 6 customers across 3 WhatsApp chats to remember who paid
           </p>
-          <div class="hero-actions">
-            <a href="https://app.erprepublic.in?signup=true" target="_blank" class="btn-primary">
-              <i class="ti ti-rocket"></i>
-              Get started free
-            </a>
-            <a href="#features" class="btn-secondary">
-              <i class="ti ti-eye"></i>
-              See how it works
-            </a>
-          </div>
-          <div class="hero-badges">
-            <span><i class="ti ti-check"></i>No credit card needed</span>
-            <span><i class="ti ti-check"></i>Setup in 5 minutes</span>
-          </div>
+          <p class="feature-note">
+            Grouped-by-customer dues list, tap to expand per-ride,
+            "mark all paid" in one tap
+          </p>
         </div>
-        <div class="phone-frame">
-          <div class="phone-frame-inner">
-            <img
-              src="screenshots/ride_list_page.png"
-              alt="HappySwift ride list screen"
-              loading="lazy"
-            />
-          </div>
+        <div class="feature-phone-wrap">
+          <img
+                  src="screenshots/balance_page.png"
+                  alt="Balance page screenshot"
+                  loading="lazy"
+          />
         </div>
       </div>
-    </header>
 
-    <section class="features" id="features">
-      <div class="container">
-        <div class="section-title">
-          <h2>Built around how you work</h2>
-          <p>Your cab yard, your drivers, your customers — everything in one place</p>
+      <div class="feature-card reverse reveal">
+        <div>
+          <i class="ti ti-steering-wheel feature-icon"></i>
+          <h3>Log a ride before you forget it</h3>
+          <p class="feature-label">Section 2 — Ride entry in minutes</p>
+          <p class="feature-pain">
+            Driver calls in a ride, owner scribbles it on paper, forgets the
+            fare by evening
+          </p>
+          <p class="feature-note">
+            Ride entry under 2 minutes, status filter chips, complete-trip
+            sheet with payment toggle. Bulk select for batch operations.
+          </p>
         </div>
-
-        <div class="feature-grid">
-
-          <div class="feature-card">
-            <div>
-              <i class="ti ti-cash feature-icon"></i>
-              <h3>Who owes me, exactly</h3>
-              <p class="feature-label">Section 1 — Dues at a glance</p>
-              <p class="feature-pain">
-                Chasing 6 customers across 3 WhatsApp chats to remember who paid
-              </p>
-              <p class="feature-note">
-                Grouped-by-customer dues list, tap to expand per-ride,
-                "mark all paid" in one tap
-              </p>
-            </div>
-            <div class="feature-phone-wrap">
-              <img
-                src="screenshots/balance_page.png"
-                alt="Balance page screenshot"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          <div class="feature-card reverse">
-            <div>
-              <i class="ti ti-steering-wheel feature-icon"></i>
-              <h3>Log a ride before you forget it</h3>
-              <p class="feature-label">Section 2 — Ride entry in minutes</p>
-              <p class="feature-pain">
-                Driver calls in a ride, owner scribbles it on paper, forgets the
-                fare by evening
-              </p>
-              <p class="feature-note">
-                Ride entry under 2 minutes, status filter chips, complete-trip
-                sheet with payment toggle. Bulk select for batch operations.
-              </p>
-            </div>
-            <div class="feature-phone-wrap">
-              <img
-                src="screenshots/ride_item.png"
-                alt="Ride detail screenshot"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          <div class="feature-card">
-            <div>
-              <i class="ti ti-chart-bar feature-icon"></i>
-              <h3>Is this week good or bad</h3>
-              <p class="feature-label">Section 3 — Revenue overview</p>
-              <p class="feature-pain">
-                No idea if this week beat last week without manually adding Excel
-                rows
-              </p>
-              <p class="feature-note">
-                Collected vs pending revenue, weekly/monthly toggle, top 5
-                customers, ride status summary
-              </p>
-            </div>
-            <div class="feature-phone-wrap">
-              <img
-                src="screenshots/overview_page.png"
-                alt="Overview page screenshot"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
+        <div class="feature-phone-wrap">
+          <img
+                  src="screenshots/ride_item.png"
+                  alt="Ride detail screenshot"
+                  loading="lazy"
+          />
         </div>
       </div>
-    </section>
 
-    <section class="testimonials">
-      <div class="container">
-        <div class="section-title">
-          <h2>Cab owners trust HappySwift</h2>
-          <p>From Cuddalore to Chennai, operators are switching</p>
+      <div class="feature-card reveal">
+        <div>
+          <i class="ti ti-chart-bar feature-icon"></i>
+          <h3>Is this week good or bad</h3>
+          <p class="feature-label">Section 3 — Revenue overview</p>
+          <p class="feature-pain">
+            No idea if this week beat last week without manually adding Excel
+            rows
+          </p>
+          <p class="feature-note">
+            Collected vs pending revenue, weekly/monthly toggle, top 5
+            customers, ride status summary
+          </p>
         </div>
-
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-            </div>
-            <p class="testimonial-text">
-              Earlier I used to note down every ride in a diary and tally at
-              end of month. Now my wife checks the balance tab every morning
-              and sends reminders. Game changer for a small operator like me.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">SK</div>
-              <div>
-                <p class="testimonial-name">S. Kumar</p>
-                <p class="testimonial-role">6 vehicles, Cuddalore</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-            </div>
-            <p class="testimonial-text">
-              The weekly overview is what I open first thing Monday. I can see
-              exactly how much is still pending from last week and follow up
-              before the next trip. My drivers also like the clarity.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">RM</div>
-              <div>
-                <p class="testimonial-name">R. Mani</p>
-                <p class="testimonial-role">12 vehicles, Thiruvannamalai</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-stars">
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-              <i class="ti ti-star-filled"></i>
-            </div>
-            <p class="testimonial-text">
-              What used to take me an hour on Excel every night now takes 5
-              minutes on my phone. I log rides while waiting at the yard and
-              the dues tab keeps me honest. Best part — my accountant loves it.
-            </p>
-            <div class="testimonial-author">
-              <div class="testimonial-avatar">VP</div>
-              <div>
-                <p class="testimonial-name">V. Prabhu</p>
-                <p class="testimonial-role">20 vehicles, Villupuram</p>
-              </div>
-            </div>
-          </div>
+        <div class="feature-phone-wrap">
+          <img
+                  src="screenshots/overview_page.png"
+                  alt="Overview page screenshot"
+                  loading="lazy"
+          />
         </div>
       </div>
-    </section>
 
-    <section class="pricing" id="pricing">
-      <div class="container">
-        <div class="section-title">
-          <h2>Simple pricing, no surprises</h2>
-          <p>Pick the plan that fits your fleet size</p>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Cab owners trust HappySwift</h2>
+      <p>From Cuddalore to Chennai, operators are switching</p>
+    </div>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
         </div>
-
-        <div class="pricing-grid">
-          <div class="pricing-card">
-            <i class="ti ti-car pricing-icon"></i>
-            <h3>Starter</h3>
-            <p class="pricing-cap">Up to 5 vehicles</p>
-            <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
-          </div>
-
-          <div class="pricing-card featured">
-            <span class="pricing-badge">Most operators</span>
-            <i class="ti ti-cars pricing-icon"></i>
-            <h3>Growth</h3>
-            <p class="pricing-cap">6 to 20 vehicles</p>
-            <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
-          </div>
-
-          <div class="pricing-card">
-            <i class="ti ti-building-warehouse pricing-icon"></i>
-            <h3>Fleet</h3>
-            <p class="pricing-cap">21+ vehicles</p>
-            <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="container">
-        <div class="footer-logo">
-          <img src="icon/app_cab_icon.png" alt="HappySwift" class="footer-icon" />
-          HappySwift
-        </div>
-        <p>Cab accounting, finally made simple</p>
-        <p class="footer-email">
-          Reach out to us @ <a href="mailto:pugazh@erprepublic.in">pugazh@erprepublic.in</a>
+        <p class="testimonial-text">
+          Earlier I used to note down every ride in a diary and tally at
+          end of month. Now my wife checks the balance tab every morning
+          and sends reminders. Game changer for a small operator like me.
         </p>
-        <p style="margin-top: 16px;">&copy; 2026 ERP Republic</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">SK</div>
+          <div>
+            <p class="testimonial-name">S. Kumar</p>
+            <p class="testimonial-role">6 vehicles, Cuddalore</p>
+          </div>
+        </div>
       </div>
-    </footer>
 
-  </body>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+        </div>
+        <p class="testimonial-text">
+          The weekly overview is what I open first thing Monday. I can see
+          exactly how much is still pending from last week and follow up
+          before the next trip. My drivers also like the clarity.
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">RM</div>
+          <div>
+            <p class="testimonial-name">R. Mani</p>
+            <p class="testimonial-role">12 vehicles, Thiruvannamalai</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+          <i class="ti ti-star-filled"></i>
+        </div>
+        <p class="testimonial-text">
+          What used to take me an hour on Excel every night now takes 5
+          minutes on my phone. I log rides while waiting at the yard and
+          the dues tab keeps me honest. Best part — my accountant loves it.
+        </p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">VP</div>
+          <div>
+            <p class="testimonial-name">V. Prabhu</p>
+            <p class="testimonial-role">20 vehicles, Villupuram</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-title reveal">
+      <h2>Simple pricing, no surprises</h2>
+      <p>Pick the plan that fits your fleet size</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="pricing-card reveal">
+        <i class="ti ti-car pricing-icon"></i>
+        <h3>Starter</h3>
+        <p class="pricing-cap">Up to 5 vehicles</p>
+        <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
+      </div>
+
+      <div class="pricing-card featured reveal">
+        <span class="pricing-badge">Most operators</span>
+        <i class="ti ti-cars pricing-icon"></i>
+        <h3>Growth</h3>
+        <p class="pricing-cap">6 to 20 vehicles</p>
+        <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
+      </div>
+
+      <div class="pricing-card reveal">
+        <i class="ti ti-building-warehouse pricing-icon"></i>
+        <h3>Fleet</h3>
+        <p class="pricing-cap">21+ vehicles</p>
+        <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-logo">
+      <img src="icon/app_cab_icon.png" alt="HappySwift" class="footer-icon" />
+      HappySwift
+    </div>
+    <p>Cab accounting, finally made simple</p>
+    <p class="footer-email">
+      Reach out to us @ <a href="mailto:pugazh@erprepublic.in">pugazh@erprepublic.in</a>
+    </p>
+    <p style="margin-top: 16px;">&copy; 2026 ERP Republic</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var prefersReduced = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    var revealEls = document.querySelectorAll(".reveal");
+
+    if (prefersReduced || !("IntersectionObserver" in window)) {
+      revealEls.forEach(function (el) {
+        el.classList.add("is-visible");
+      });
+      return;
+    }
+
+    var observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+
+    revealEls.forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+</body>
 </html>
