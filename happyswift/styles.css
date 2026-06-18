@@ -608,6 +608,24 @@ body {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .nav-signin-text {
+    display: none;
+  }
+
+  .nav-signin {
+    padding: 8px 10px;
+    font-size: 0;
+  }
+
+  .nav-signin i {
+    font-size: 18px;
+  }
+
+  .nav-cta {
+    font-size: 12px;
+    padding: 7px 14px;
+  }
+
   .hero {
     padding: 40px 0 60px;
   }
