@@ -64,6 +64,12 @@ body {
   height: 56px;
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .nav-logo {
   font-size: 18px;
   font-weight: 600;
@@ -83,6 +89,24 @@ body {
 .nav-icon {
   width: 28px;
   height: 28px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--color-text-primary);
 }
 
 .nav-actions {
@@ -732,9 +756,11 @@ body {
 }
 
 .pricing-icon {
-  font-size: 22px;
+  width: 22px;
+  height: 22px;
   color: var(--color-text-secondary);
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
 }
 
 .pricing-card.featured .pricing-icon {
@@ -744,13 +770,122 @@ body {
 .pricing-card h3 {
   font-size: 17px;
   font-weight: 500;
+}
+
+.pricing-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 2px;
 }
 
+.pricing-head .pricing-icon {
+  margin-bottom: 0;
+}
+
 .pricing-cap {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+.pricing-price {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 14px;
+  display: none;
+}
+
+.pricing-price.active {
+  display: block;
+}
+
+.pricing-custom {
+  display: block !important;
+}
+
+.pricing-note {
+  font-size: 11px;
+  color: var(--color-text-tertiary);
+  margin: 2px 0 14px;
+}
+
+.pricing-card.featured .pricing-price {
+  color: var(--color-primary);
+}
+
+.billing-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: -10px 0 28px;
+  background: var(--color-background-primary);
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3px;
+  border-radius: 100px;
+  border: 0.5px solid var(--color-border-tertiary);
+}
+
+.billing-opt {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: inherit;
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.billing-opt.active {
+  background: var(--color-primary);
+  color: var(--color-background-primary);
+}
+
+.billing-save {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--color-text-success);
+  margin-left: 3px;
+}
+
+.billing-opt.active .billing-save {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pricing-features li {
   font-size: 12px;
   color: var(--color-text-secondary);
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pricing-features li::before {
+  content: '';
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  background: var(--color-text-success);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
 }
 
 .pricing-btn {
@@ -832,8 +967,31 @@ body {
   color: #93c5fd;
 }
 
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 0.5px solid #334155;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  transition: all 0.2s;
+}
+
+.footer-social:hover {
+  background: #1e293b;
+  border-color: #60a5fa;
+  color: #60a5fa !important;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
   .nav-signin {
     display: none;
   }
