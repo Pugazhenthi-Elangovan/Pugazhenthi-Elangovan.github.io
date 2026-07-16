@@ -23,13 +23,20 @@
 
 <nav class="nav">
   <div class="container">
-    <a href="/happyswift" class="nav-logo">
-      <img src="icon/app_cab_icon.png" alt="HappySwift" class="nav-icon" />
-      HappySwift
-    </a>
+    <div class="nav-left">
+      <a href="/happyswift" class="nav-logo">
+        <img src="icon/app_cab_icon.png" alt="HappySwift" class="nav-icon" />
+        HappySwift
+      </a>
+      <div class="nav-links">
+        <a href="#features" onclick="trackView('features_view')">Features</a>
+        <a href="#testimonials" onclick="trackView('testimonials_view')">Testimonials</a>
+        <a href="#pricing" onclick="trackView('pricing_view')">Pricing</a>
+      </div>
+    </div>
     <div class="nav-actions">
-      <a href="https://happyswift.erprepublic.in" target="_blank" class="nav-signin">Sign in</a>
-      <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="nav-cta">Get started free</a>
+      <a href="https://happyswift.erprepublic.in" target="_blank" class="nav-signin" onclick="trackSignin()">Sign in</a>
+      <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="nav-cta" onclick="trackSignup('nav_bar')">Get started free</a>
     </div>
   </div>
 </nav>
@@ -49,7 +56,7 @@
         Rides, Driver salary, Vehicle Service, Business Profit — <b>Control Everything</b> at your finger's tip.
       </p>
       <div class="hero-actions">
-        <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="btn-primary btn-glow-border">
+        <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="btn-primary btn-glow-border" onclick="trackSignup('hero')">
           <i class="ti ti-rocket"></i>
           Get started - free trail
         </a>
@@ -237,30 +244,70 @@
   <div class="container">
     <div class="section-title reveal">
       <h2>Simple pricing, no surprises</h2>
-      <p>Pick the plan that fits your fleet size</p>
+      <p>Start free. Upgrade only when your fleet grows.</p>
+    </div>
+
+    <div class="billing-toggle reveal">
+      <button class="billing-opt active" data-period="monthly" onclick="setBilling('monthly')">Monthly</button>
+      <button class="billing-opt" data-period="semestral" onclick="setBilling('semestral')">6 Months <span class="billing-save">Save ~16%</span></button>
     </div>
 
     <div class="pricing-grid">
       <div class="pricing-card reveal">
-        <i class="ti ti-car pricing-icon"></i>
-        <h3>Starter</h3>
-        <p class="pricing-cap">Up to 5 vehicles</p>
-        <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
+        <div class="pricing-head">
+          <svg class="pricing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          <h3>Starter</h3>
+        </div>
+        <p class="pricing-cap">Up to 2 vehicles</p>
+        <p class="pricing-cap">Free
+          <span class="pricing-note"> for 2 years</span></p>
+        <p class="pricing-price pricing-note period-semestral">After 2 years · ₹499 / vehicle / 6 months</p>
+        <p class="pricing-price pricing-note period-monthly active">After 2 years · ₹99 / vehicle / month</p>
+        <ul class="pricing-features">
+          <li>100 rides per month</li>
+          <li>Payment tracking</li>
+          <li>Outstanding dues</li>
+          <li>Fuel and Expense tracking</li>
+          <li>Overview dashboard</li>
+          <li>Vehicle Service Tracking</li>
+        </ul>
+        <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="pricing-btn" onclick="trackSignup('pricing_starter')">Get started</a>
       </div>
 
       <div class="pricing-card featured reveal">
-        <span class="pricing-badge">Most operators</span>
-        <i class="ti ti-cars pricing-icon"></i>
-        <h3>Growth</h3>
-        <p class="pricing-cap">6 to 20 vehicles</p>
-        <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
+        <span class="pricing-badge">Most popular</span>
+        <div class="pricing-head">
+          <svg class="pricing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+          <h3>Growth</h3>
+        </div>
+        <p class="pricing-cap">3 to 15 vehicles</p>
+        <p class="pricing-price period-monthly active">₹199 / vehicle / month</p>
+        <p class="pricing-price period-semestral">₹999 / vehicle / 6 months</p>
+        <ul class="pricing-features">
+          <li>Everything in Starter</li>
+          <li>Unlimited rides</li>
+          <li>Driver salary tracking</li>
+          <li>Weekly/Monthly Analytics</li>
+          <li>Vehicle Service reminders</li>
+        </ul>
+        <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="pricing-btn" onclick="trackSignup('pricing_growth')">Start free trial</a>
       </div>
 
       <div class="pricing-card reveal">
-        <i class="ti ti-building-warehouse pricing-icon"></i>
-        <h3>Fleet</h3>
-        <p class="pricing-cap">21+ vehicles</p>
-        <a href="tel:+919789582694" class="pricing-btn">Talk to us</a>
+        <div class="pricing-head">
+          <svg class="pricing-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/><path d="m4.93 4.93 14.14 14.14"/><path d="m19.07 4.93-14.14 14.14"/></svg>
+          <h3>Fleet</h3>
+        </div>
+        <p class="pricing-cap">16+ vehicles</p>
+        <p class="pricing-price pricing-custom">Custom Pricing</p>
+        <ul class="pricing-features">
+          <li>Everything in Growth</li>
+          <li>Multi-user access</li>
+          <li>Vehicle-wise Analytics</li>
+          <li>Business flow Customizations</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="tel:+919789582694" class="pricing-btn" onclick="trackCall('fleet')">Talk to us</a>
       </div>
     </div>
   </div>
@@ -270,7 +317,7 @@
   <div class="container">
     <h2 class="cta-title">Ready to stop guessing?</h2>
     <p class="cta-desc">Want to know your business more, control it and </br> Ready to grow?</p>
-    <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="btn-primary btn-glow-border">
+    <a href="https://happyswift.erprepublic.in?signup=true" target="_blank" class="btn-primary btn-glow-border" onclick="trackSignup('footer_cta')">
       <i class="ti ti-rocket"></i>
       Get started free — no card needed
     </a>
@@ -310,12 +357,21 @@
       <span class="footer-sep">—</span>
       <span>&copy; 2026 ERP Republic</span>
       <span class="footer-sep">·</span>
-      <a href="mailto:pugazh@erprepublic.in">pugazh@erprepublic.in</a>
+      <a href="mailto:pugazh@erprepublic.in" class="footer-social" onclick="trackEmail()" aria-label="Email"><i class="ti ti-mail"></i></a>
     </div>
   </div>
 </footer>
 
 <script>
+  function gtrack(event, params) {
+    gtag('event', event, params || {});
+  }
+  function trackSignup(location) { gtrack('signup_cta_click', { location: location, transport_type: 'beacon' }); }
+  function trackCall(plan) { gtrack('call_click', { plan: plan, transport_type: 'beacon' }); }
+  function trackSignin() { gtrack('signin_click', { transport_type: 'beacon' }); }
+  function trackEmail() { gtrack('email_click'); }
+  function trackView(name) { gtrack(name); }
+
   (function () {
     var prefersReduced = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -344,7 +400,28 @@
     revealEls.forEach(function (el) {
       observer.observe(el);
     });
+
+    var scrollFired = {};
+    function onScroll() {
+      var pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+      [50, 90].forEach(function (t) {
+        if (pct >= t / 100 && !scrollFired[t]) {
+          scrollFired[t] = true;
+          gtag('event', 'scroll_' + t);
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
   })();
+
+  function setBilling(period) {
+    document.querySelectorAll('.billing-opt').forEach(function(b) {
+      b.classList.toggle('active', b.dataset.period === period);
+    });
+    document.querySelectorAll('.pricing-price').forEach(function(p) {
+      p.classList.toggle('active', p.classList.contains('period-' + period));
+    });
+  }
 </script>
 </body>
 </html>
