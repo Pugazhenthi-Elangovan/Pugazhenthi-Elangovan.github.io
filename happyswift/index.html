@@ -12,8 +12,8 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HappySwift | Travel Accounting & Ride Management Software for Travel Operators</title>
-  <meta name="description" content="HappySwift is a simple ride management and accounting software for Travel operators. Track rides, pending payments, driver salary and business profit from your phone." />
+  <title>HappySwift | Ride Management & Accounting Software for Cab Operators</title>
+  <meta name="description" content="HappySwift is ride management and accounting software for cab operators. Track rides, drivers, pending customer payments, expenses, vehicle service and daily business profit from your phone." />
   <meta property="og:title" content="HappySwift - Travel Accounting Made Simple">
   <meta property="og:description" content="Track rides, pending payments, drivers and profits in one app.">
   <meta property="og:image" content="https://www.erprepublic.in/happyswift/icon/app_twitter_icon.png">
@@ -35,6 +35,85 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.31.0/dist/tabler-icons.min.css" />
   <link rel="stylesheet" href="styles.css" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.erprepublic.in/#organization",
+          "name": "ERP Republic",
+          "url": "https://www.erprepublic.in/",
+          "logo": "https://www.erprepublic.in/happyswift/icon/app_cab_icon.png",
+          "sameAs": [
+            "https://www.instagram.com/happy_swift_ride"
+          ]
+        },
+        {
+          "@type": "SoftwareApplication",
+          "@id": "https://www.erprepublic.in/happyswift/#software",
+          "name": "HappySwift",
+          "url": "https://www.erprepublic.in/happyswift/",
+          "applicationCategory": "BusinessApplication",
+          "applicationSubCategory": "Ride Management Software",
+          "operatingSystem": "Web",
+          "image": "https://www.erprepublic.in/happyswift/icon/app_twitter_icon.png",
+          "description": "HappySwift is a mobile-first ride management and travel accounting software for cab operators. Manage rides, drivers, vehicles, pending payments, expenses and daily business profit from one dashboard.",
+          "publisher": {
+            "@id": "https://www.erprepublic.in/#organization"
+          },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Cab operators and travel agencies"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "INR",
+            "availability": "https://schema.org/InStock"
+          },
+          "featureList": [
+            "Ride Management",
+            "Vehicle Management",
+            "Driver Management",
+            "Customer Management",
+            "Outstanding Payment Tracking",
+            "Daily Profit and Loss",
+            "Expense Tracking",
+            "Vehicle Service Tracking",
+            "Weekly and Monthly Analytics"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.erprepublic.in/happyswift/#website",
+          "url": "https://www.erprepublic.in/happyswift/",
+          "name": "HappySwift",
+          "publisher": {
+            "@id": "https://www.erprepublic.in/#organization"
+          },
+          "inLanguage": "en-IN"
+        },
+        {
+          "@type": "WebPage",
+          "@id": "https://www.erprepublic.in/happyswift/#webpage",
+          "url": "https://www.erprepublic.in/happyswift/",
+          "name": "HappySwift | Travel Accounting & Ride Management Software",
+          "description": "Ride management and accounting software for cab operators.",
+          "isPartOf": {
+            "@id": "https://www.erprepublic.in/happyswift/#website"
+          },
+          "about": {
+            "@id": "https://www.erprepublic.in/happyswift/#software"
+          },
+          "primaryImageOfPage": {
+            "@type": "ImageObject",
+            "url": "https://www.erprepublic.in/happyswift/icon/app_twitter_icon.png"
+          }
+        }
+      ]
+    }
+  </script>
 </head>
 <body>
 
@@ -42,7 +121,7 @@
   <div class="container">
     <div class="nav-left">
       <a href="/happyswift" class="nav-logo">
-        <img src="icon/app_cab_icon.png" alt="HappySwift" class="nav-icon" />
+        <img src="icon/app_cab_icon.png" alt="HappySwift ride management software logo" class="nav-icon" />
         HappySwift
       </a>
       <div class="nav-links">
@@ -91,7 +170,7 @@
       <div class="phone-frame-inner">
         <img
                 src="screenshots/ride_list_page.png"
-                alt="HappySwift ride list screen"
+                alt="HappySwift ride management dashboard showing today's rides, customers and payment status"
                 loading="lazy"
         />
       </div>
@@ -124,7 +203,7 @@
         <div class="feature-phone-wrap">
           <img
                   src="screenshots/balance_page.png"
-                  alt="Balance page screenshot"
+                  alt="Outstanding customer payments dashboard showing pending dues grouped by customer"
                   loading="lazy"
           />
         </div>
@@ -147,7 +226,7 @@
         <div class="feature-phone-wrap">
           <img
                   src="screenshots/ride_item.png"
-                  alt="Ride detail screenshot"
+                  alt="Ride details screen for recording fare, driver, vehicle and payment information"
                   loading="lazy"
           />
         </div>
@@ -170,7 +249,7 @@
         <div class="feature-phone-wrap">
           <img
                   src="screenshots/overview_page.png"
-                  alt="Overview page screenshot"
+                  alt="Business overview dashboard displaying revenue, pending collections and ride analytics"
                   loading="lazy"
           />
         </div>
@@ -180,7 +259,7 @@
   </div>
 </section>
 
-<section class="testimonials">
+<section class="testimonials" id="testimonials">
   <div class="container">
     <div class="section-title reveal">
       <h2>Cab owners trust HappySwift</h2>
@@ -368,7 +447,7 @@
   <div class="container">
     <div class="footer-inner">
       <span class="footer-logo">
-        <img src="icon/app_cab_icon.png" alt="HappySwift" class="footer-icon" />
+        <img src="icon/app_cab_icon.png" alt="HappySwift logo" class="footer-icon" />
         HappySwift
       </span>
       <span class="footer-sep">—</span>
